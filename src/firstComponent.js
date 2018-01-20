@@ -1,17 +1,17 @@
 import React from 'react';
 
 class App extends React.Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             buyItems : ['holo','moz','gilas']
         }
     }
     addNewItem(e){
         e.preventDefault();
-        let {buyItems} = this.state;
+        const {buyItems} = this.state;
         const newItem = 'text';
-            buyItems.setState({
+            this.setState({
               buyItems : [...this.state.buyItems,newItem]
             })
     }

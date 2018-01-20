@@ -18295,10 +18295,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
-    function App(props) {
+    function App() {
         _classCallCheck(this, App);
 
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
         _this.state = {
             buyItems: ['holo', 'moz', 'gilas']
@@ -18313,7 +18313,7 @@ var App = function (_React$Component) {
             var buyItems = this.state.buyItems;
 
             var newItem = 'text';
-            buyItems.setState({
+            this.setState({
                 buyItems: [].concat(_toConsumableArray(this.state.buyItems), [newItem])
             });
         }
