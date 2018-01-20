@@ -18312,10 +18312,15 @@ var App = function (_React$Component) {
             e.preventDefault();
             var buyItems = this.state.buyItems;
 
-            var newItem = 'text';
-            this.setState({
-                buyItems: [].concat(_toConsumableArray(this.state.buyItems), [newItem])
-            });
+            var newItem = this.newItem.value;
+            var Itexist = buyItems.includes(newItem);
+            if (Itexist) {
+                alert("This item is existing");
+            } else {
+                this.setState({
+                    buyItems: [].concat(_toConsumableArray(this.state.buyItems), [newItem])
+                });
+            }
         }
     }, {
         key: 'render',
@@ -18333,7 +18338,9 @@ var App = function (_React$Component) {
                         { onSubmit: function onSubmit(info) {
                                 _this2.addNewItem(info);
                             } },
-                        _react2.default.createElement('input', { placeholder: 'your favorite fruite', className: 'Favinput', type: 'text' }),
+                        _react2.default.createElement('input', { ref: function ref(newAnotheritem) {
+                                _this2.newItem = newAnotheritem;
+                            }, placeholder: 'your favorite fruite', className: 'Favinput', type: 'text' }),
                         _react2.default.createElement('input', { type: 'submit', value: 'press me' })
                     )
                 ),
@@ -18356,6 +18363,7 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+//efji
 
 /***/ })
 /******/ ]);

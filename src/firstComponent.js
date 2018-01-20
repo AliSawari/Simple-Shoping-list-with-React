@@ -10,10 +10,15 @@ class App extends React.Component{
     addNewItem(e){
         e.preventDefault();
         const {buyItems} = this.state;
-        const newItem = 'text';
+        const newItem = this.newItem.value;
+        let Itexist = buyItems.includes(newItem);
+        if(Itexist){
+            alert("This item is existing");
+        }else{
             this.setState({
               buyItems : [...this.state.buyItems,newItem]
             })
+        }
     }
     
     render() {
@@ -21,7 +26,7 @@ class App extends React.Component{
             <div className="Parent">
             <div className="parentOfForm">
             <form onSubmit={(info) => {this.addNewItem(info)}}>
-            <input placeholder="your favorite fruite" className="Favinput" type="text" />
+            <input ref={(newAnotheritem) => {this.newItem = newAnotheritem}}placeholder="your favorite fruite" className="Favinput" type="text" />
             <input type="submit" value="press me" />
             </form>
             </div>
@@ -39,3 +44,4 @@ class App extends React.Component{
     }
 }
 export default App;
+//efji
