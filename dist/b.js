@@ -18284,6 +18284,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -18305,15 +18307,35 @@ var App = function (_React$Component) {
     }
 
     _createClass(App, [{
+        key: 'addNewItem',
+        value: function addNewItem(e) {
+            e.preventDefault();
+            var buyItems = this.state.buyItems;
+
+            var newItem = 'text';
+            buyItems.setState({
+                buyItems: [].concat(_toConsumableArray(this.state.buyItems), [newItem])
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'Parent' },
                 _react2.default.createElement(
-                    'p',
-                    null,
-                    'This is a paragraph that we can put long text in it'
+                    'div',
+                    { className: 'parentOfForm' },
+                    _react2.default.createElement(
+                        'form',
+                        { onSubmit: function onSubmit(info) {
+                                _this2.addNewItem(info);
+                            } },
+                        _react2.default.createElement('input', { placeholder: 'your favorite fruite', className: 'Favinput', type: 'text' }),
+                        _react2.default.createElement('input', { type: 'submit', value: 'press me' })
+                    )
                 ),
                 _react2.default.createElement(
                     'ul',

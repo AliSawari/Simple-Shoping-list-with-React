@@ -7,11 +7,24 @@ class App extends React.Component{
             buyItems : ['holo','moz','gilas']
         }
     }
+    addNewItem(e){
+        e.preventDefault();
+        let {buyItems} = this.state;
+        const newItem = 'text';
+            buyItems.setState({
+              buyItems : [...this.state.buyItems,newItem]
+            })
+    }
     
     render() {
         return(
             <div className="Parent">
-            <p>This is a paragraph that we can put long text in it</p>
+            <div className="parentOfForm">
+            <form onSubmit={(info) => {this.addNewItem(info)}}>
+            <input placeholder="your favorite fruite" className="Favinput" type="text" />
+            <input type="submit" value="press me" />
+            </form>
+            </div>
             <ul>
             {
             this.state.buyItems.map(items => {
