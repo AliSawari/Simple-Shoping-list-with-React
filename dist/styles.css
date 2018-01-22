@@ -1,0 +1,112 @@
+header, footer, aside, nav, article, figure , figurcaption,section {
+    display:block; }
+  html,body, div, span, object,section, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strike, strong, sub, sup, tt, var,b, i,dl, dt, dd, ol, ul, li,fieldset,form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas,details,figure, figcaption, footer, header, hgroup,menu, nav, output, summary,time, mark, audio, video {
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background: transparent; }
+    tbody{
+      float: none;
+    }
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+    }
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    [hidden],
+    template {
+      display: none;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+    }
+    ol, ul {
+      list-style:decimal;
+      padding: 0px;
+    }
+    table {
+      border-collapse:collapse;
+      border-spacing:0;
+    }
+    a,p,h1, h2, h3, h4, h5, h6,span{
+      text-decoration:none;
+      font-weight: 500;
+}
+body{
+    margin:0px;
+    padding:0px;
+    /*direction: rtl;*/
+	overflow-x: hidden;
+    font-family: iransan;
+	max-width: 1366px;
+	min-height: 768px;
+    overflow-x:hidden;
+}
+a{
+    text-decoration: none;
+    color:#121212;
+}
+
+.Parent{
+    background: #00C9FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width:100%;
+    height: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.parentOfForm{
+    margin-top: 50px;
+}
+.Favinput{
+    border: 2px solid #e1e1e1;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+.Favinput:focus{
+    border: 2px solid #26d7e5;
+}
+.SubmitButton{
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid #26d7e5;
+    margin-left: 10px;
+    background-color: white;
+}
+.ShopingList{
+    width: 385px;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 30px;
+}
+.line{
+    border: 3px solid aliceblue;
+}
+.Title{
+    padding:10px 0px 0px 15px;
+}
+.spaces{
+    padding:10px 0px 20px 0px;
+    margin-left: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+

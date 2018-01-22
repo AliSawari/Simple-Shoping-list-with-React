@@ -39,18 +39,22 @@ class App extends React.Component{
             <div className="parentOfForm">
             <form onSubmit={(info) => {this.addNewItem(info)}}>
             <input ref={(newAnotheritem) => {this.newItem = newAnotheritem}} placeholder="your favorite fruite" className="Favinput" type="text" />
-            <input type="submit" value="press me" />
+            <input className="SubmitButton" type="submit" value="press me" />
             </form>
             </div>
+            <div className="ShopingList">
+            <h4 className="Title">Items</h4>
+            <hr className="line"></hr>
             <ul>
             {
             this.state.buyItems.map(items => {
                 return(
-                    <li key={items}>{items}</li>
+                    <li className="spaces" key={items}>{items}</li>
                 );
             })
             }
             </ul>
+            </div>
             </div>
         );
    }

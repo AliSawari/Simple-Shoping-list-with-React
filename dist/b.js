@@ -18357,19 +18357,29 @@ var App = function (_React$Component) {
                         _react2.default.createElement('input', { ref: function ref(newAnotheritem) {
                                 _this2.newItem = newAnotheritem;
                             }, placeholder: 'your favorite fruite', className: 'Favinput', type: 'text' }),
-                        _react2.default.createElement('input', { type: 'submit', value: 'press me' })
+                        _react2.default.createElement('input', { className: 'SubmitButton', type: 'submit', value: 'press me' })
                     )
                 ),
                 _react2.default.createElement(
-                    'ul',
-                    null,
-                    this.state.buyItems.map(function (items) {
-                        return _react2.default.createElement(
-                            'li',
-                            { key: items },
-                            items
-                        );
-                    })
+                    'div',
+                    { className: 'ShopingList' },
+                    _react2.default.createElement(
+                        'h4',
+                        { className: 'Title' },
+                        'Items'
+                    ),
+                    _react2.default.createElement('hr', { className: 'line' }),
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        this.state.buyItems.map(function (items) {
+                            return _react2.default.createElement(
+                                'li',
+                                { className: 'spaces', key: items },
+                                items
+                            );
+                        })
+                    )
                 )
             );
         }
