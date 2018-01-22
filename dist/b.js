@@ -18301,27 +18301,43 @@ var App = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
         _this.state = {
-            buyItems: ['holo', 'moz', 'gilas']
+            buyItems: ['holo', 'moz', 'gilas'],
+            message: 'this Item is exist'
         };
         return _this;
     }
+
+    // Adding a new Item and prevent default behavior 
+    // solving bugs like empty input or repeating items
+
 
     _createClass(App, [{
         key: 'addNewItem',
         value: function addNewItem(e) {
             e.preventDefault();
-            var buyItems = this.state.buyItems;
+            var _state = this.state,
+                buyItems = _state.buyItems,
+                message = _state.message;
 
             var newItem = this.newItem.value;
             var Itexist = buyItems.includes(newItem);
-            if (Itexist) {
-                alert("This item is existing");
-            } else {
+            if (newItem == '') {
+                alert('The input is empty please fill it');
+                this.setState({
+                    buyItems: [].concat(_toConsumableArray(this.state.buyItems))
+                });
+            } else if (!newItem == '' && !Itexist) {
                 this.setState({
                     buyItems: [].concat(_toConsumableArray(this.state.buyItems), [newItem])
                 });
             }
+            if (Itexist) {
+                alert(message);
+            }
         }
+
+        //rendering all the elements
+
     }, {
         key: 'render',
         value: function render() {
@@ -18361,9 +18377,10 @@ var App = function (_React$Component) {
 
     return App;
 }(_react2.default.Component);
+//exporting to the app file for DOM render
+
 
 exports.default = App;
-//efji
 
 /***/ })
 /******/ ]);
